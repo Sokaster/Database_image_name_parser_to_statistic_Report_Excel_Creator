@@ -1,0 +1,81 @@
+﻿<Window x:Class="BatteRay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BatteRay"
+        mc:Ignorable="d"
+        Title="Battery Analyzer" Height="600" Width="800" Background="#FF1F1F1F" FontFamily="Arial Black" FontWeight="Bold">
+    <Grid>
+        <Viewbox>
+            <Grid Width="800" Height="600">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/01.2137.png" Stretch="Fill">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.45" ScaleY="0.4"/>
+                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform Y="0.35" X="0.27"/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Grid.Background>
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="/LOGOBATTERY.png">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.5" ScaleY="0.4"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform Y="-0.42" X="0.44"/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+                    </StackPanel.Background>
+
+                    <TextBlock Text="Enter New Battery Type, Mass, and Identifier" Margin="5" Foreground="#FFFF6900" FontFamily="Arial Black"/>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBox x:Name="batteryTypeInput" Width="200" Margin="5" Background="#FFFF6900" Text="Введите тип батарейки" GotFocus="BatteryTypeInput_GotFocus" LostFocus="BatteryTypeInput_LostFocus"/>
+                        <TextBox x:Name="batteryMassInput" Width="100" Margin="5" Background="#FFFF6900" Text="Mass" GotFocus="TextBox_GotFocus"/>
+                        <TextBox x:Name="batteryIdentifierInput" Width="200" Margin="5" Background="#FFFF6900" Text="Identifier" GotFocus="TextBox_GotFocus"/>
+                        <Button x:Name="addBatteryTypeButton" Content="Add Battery Type" Margin="5" Click="AddBatteryTypeButton_Click" FontFamily="Arial Black" Height="20" Background="#FFFF6900"/>
+                        
+                        
+                    </StackPanel>
+                    <!--<Button x:Name="loadBatteryTypesButton" Content="Load Battery Types" Margin="5" Click="LoadBatteryTypesButton_Click" FontFamily="Arial Black" Height="20" Background="#FFFF6900"/>-->
+                    <Button x:Name="loadFromFileButton" Content="Load from File" Margin="5" Click="LoadFromFileButton_Click" FontFamily="Arial Black" Height="20" Background="#FFFF6900"/>
+                    <Button x:Name="clearDatabaseButton" Content="Clear Database" Margin="5" Click="ClearDatabaseButton_Click" FontFamily="Arial Black" Height="20" Background="#FFFF6900"/>
+
+                    <ListBox x:Name="batteryTypesListBox" Height="150" Margin="5" SelectionMode="Single" Background="#FFFF6900">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} - Mass: {1}">
+                                            <Binding Path="Name"/>
+                                            <Binding Path="Mass"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Button x:Name="updateBatteryTypeButton" Content="Update Selected" Margin="5" Click="UpdateBatteryTypeButton_Click" FontFamily="Arial Black" Height="20" Width="120" Background="#FFFF6900"/>
+                        <Button x:Name="deleteBatteryTypeButton" Content="Delete Selected" Margin="5" Click="DeleteBatteryTypeButton_Click" FontFamily="Arial Black" Height="20" Width="120" Background="#FFFF6900"/>
+                    </StackPanel>
+                    
+                    <Button x:Name="selectFolderButton" Content="Select Folder" Margin="5" Click="SelectFolderButton_Click" Foreground="Black" FontFamily="Arial Black" Height="20" Background="#FFFF6900"/>
+                    <TextBlock x:Name="selectedFolderTextBlock" Text="No folder selected" Margin="5" Foreground="#FFFF6900" FontFamily="Arial Black" FontWeight="Bold"/>
+                    <Button x:Name="analyzeButton" Content="Analyze" Margin="5" Click="AnalyzeButton_Click" FontFamily="Arial Black" Height="20" Background="#FFFF6900"/>
+                    <Button x:Name="exportToExcelButton" Content="Export to Excel" Margin="5" Click="ExportToExcelButton_Click" FontFamily="Arial Black" Height="20" Background="#FFFF6900"/>
+                    <ScrollViewer Height="160" Margin="5,5,388,5" Width="380">
+                        <TextBlock x:Name="resultTextBlock" Text="Results will be shown here" FontWeight="Bold" FontFamily="Arial Black" Foreground="#FFFF6900"/>
+                    </ScrollViewer>
+                </StackPanel>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Window>

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BatteRay", "BatteRay\BatteRay.csproj", "{7A994EB0-9D3D-47DB-9561-0AB522CB73D3}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BatSetup", "BatSetup\BatSetup.vdproj", "{951B0069-6D3F-4170-A216-B8EC00F45526}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DefaultBuild|Any CPU = DefaultBuild|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A994EB0-9D3D-47DB-9561-0AB522CB73D3}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{7A994EB0-9D3D-47DB-9561-0AB522CB73D3}.All|Any CPU.Build.0 = Release|Any CPU
+		{7A994EB0-9D3D-47DB-9561-0AB522CB73D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A994EB0-9D3D-47DB-9561-0AB522CB73D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A994EB0-9D3D-47DB-9561-0AB522CB73D3}.DefaultBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A994EB0-9D3D-47DB-9561-0AB522CB73D3}.DefaultBuild|Any CPU.Build.0 = Debug|Any CPU
+		{7A994EB0-9D3D-47DB-9561-0AB522CB73D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A994EB0-9D3D-47DB-9561-0AB522CB73D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951B0069-6D3F-4170-A216-B8EC00F45526}.All|Any CPU.ActiveCfg = Debug
+		{951B0069-6D3F-4170-A216-B8EC00F45526}.Debug|Any CPU.ActiveCfg = Debug
+		{951B0069-6D3F-4170-A216-B8EC00F45526}.DefaultBuild|Any CPU.ActiveCfg = Debug
+		{951B0069-6D3F-4170-A216-B8EC00F45526}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DEF7CC7-E446-4EC1-AA89-6F7DE5AAC148}
+	EndGlobalSection
+EndGlobal
